@@ -5,6 +5,9 @@ server:
     keyAlias: tomcat
     key-store-password: password.1
   port: 8090
+spring:
+  profiles:
+    active: DEV
 
 
 weChat:

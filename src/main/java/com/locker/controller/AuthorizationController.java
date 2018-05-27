@@ -32,6 +32,7 @@ public class AuthorizationController {
         System.out.println(weTokenBean.toString());
         TokenBean tokenBean=new TokenBean();
         tokenBean.setAccess_token(weTokenBean.getSession_key());
+        //redis token+userid 2h
         return tokenBean;
     }
 
