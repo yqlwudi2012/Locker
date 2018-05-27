@@ -1,0 +1,13 @@
+server:
+  ssl:
+    key-store: keystore.p12
+    keyStoreType: PKCS12
+    keyAlias: tomcat
+    key-store-password: password.1
+  port: 8090
+
+
+weChat:
+  appID: wx4c541bc021900514
+  appSecret: 8a83b9abf8ff116e4af994c5c4a0df3b
+  auth_url: https://api.weixin.qq.com/sns/jscode2session?appid={appid}&secret={secret}&js_code={code}&grant_type=authorization_code
