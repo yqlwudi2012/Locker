@@ -14,4 +14,6 @@ public class WeTokenBean {
     private String openid;
     private String session_key;
     private String unionid;
+    private String errcode;
+    private String errmsg;
 }
