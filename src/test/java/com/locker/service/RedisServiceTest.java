@@ -17,7 +17,7 @@ public class RedisServiceTest {
     private RedisService redisService;
     @Test
     public void setTokenToRedisTemporaryHours() throws Exception {
-        WeTokenBean weTokenBean=new WeTokenBean("yqlccc","tokentest",null);
+        WeTokenBean weTokenBean=new WeTokenBean("yqlccc","tokentest",null,null,null);
         redisService.setTokenToRedisTemporaryHours(weTokenBean,(long)2);
     }
 
