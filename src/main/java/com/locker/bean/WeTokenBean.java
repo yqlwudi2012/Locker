@@ -1,8 +1,6 @@
 package com.locker.bean;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 /**
  * Created by Administrator on 2018/5/27.
@@ -10,6 +8,8 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class WeTokenBean {
     private String openid;
     private String session_key;

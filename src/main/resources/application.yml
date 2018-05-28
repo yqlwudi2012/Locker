@@ -1,14 +1,14 @@
 server:
-  ssl:
-    key-store: keystore.p12
-    keyStoreType: PKCS12
-    keyAlias: tomcat
-    key-store-password: password.1
-  port: 8090
+#  ssl:
+#    key-store: keystore.p12
+#    keyStoreType: PKCS12
+#    keyAlias: tomcat
+#    key-store-password: password.1
+  port: 40032
+
 spring:
   profiles:
     active: DEV
-
 
 weChat:
   appID: wx4c541bc021900514
