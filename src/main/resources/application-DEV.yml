@@ -37,5 +37,8 @@ spring:
 #token拦截器是否启动
 interceptor:
   token: true
-
+  origins: /swagger-ui.html,/auth/**,/webjars/**,/v2/**,/swagger-resources/**
+#Swagger2 是否启动
+swagger2:
+  enabled: true
 
