@@ -34,7 +34,7 @@ public class CosConfiguration extends WebMvcConfigurationSupport {
     public void addInterceptors(InterceptorRegistry registry) {
 
         registry.addInterceptor(new CosInterceptor(isTokenOn, mapper, redisService))
-                .addPathPatterns("/**").excludePathPatterns("/", "/auth/**", "/swagger-ui.html", "/swagger-resources/**", "/v2/**");
+                .addPathPatterns("/**").excludePathPatterns(origins);
         super.addInterceptors(registry);
     }
 
