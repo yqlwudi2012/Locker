@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
  * Created by Administrator on 2018/5/27.
  */
 @Service
-public class weChatService {
+public class WeChatService {
     @Autowired
     private RestTemplate restTemplate;
 

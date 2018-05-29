@@ -20,7 +20,7 @@ import java.io.Serializable;
 public class CabinetInfoDTO implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int cabinetID;
+    private int cabinetId;
 
     @Column(length=256)
     private String address;

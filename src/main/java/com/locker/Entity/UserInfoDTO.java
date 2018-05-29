@@ -1,6 +1,7 @@
 package com.locker.Entity;
 
 import lombok.*;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,9 +17,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@DynamicUpdate
 public class UserInfoDTO implements Serializable{
     @Id
-    private String weOpenID;
+    private String weOpenId;
 
     @Column(length = 16)
     private String weNickName;
@@ -30,25 +32,35 @@ public class UserInfoDTO implements Serializable{
     private int userStates;
 
     @Column(length=11)
-    private int userMobile;
+    private String userMobile;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastLoginTime;
 
+    @Column(updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date registerTime;
 
     @Column(length=256)
-    private int userToken;
+    private String userToken;
 
     @PrePersist
     protected void prePersist() {
+
         if (this.registerTime == null) {
             registerTime = new Date();
         }
         if (this.lastLoginTime == null) {
             lastLoginTime = new Date();
         }
+        if(this.userStates==0){
+            userStates=1;
+        }
+    }
+    @PreUpdate
+    void preUpdate(){
+        System.out.println("update user....");
+        lastLoginTime = new Date();
     }
 
 }

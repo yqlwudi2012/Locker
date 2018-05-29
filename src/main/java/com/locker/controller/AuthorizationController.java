@@ -3,7 +3,8 @@ package com.locker.controller;
 import com.locker.bean.TokenBean;
 import com.locker.bean.WeTokenBean;
 import com.locker.service.RedisService;
-import com.locker.service.weChatService;
+import com.locker.service.UserInfoService;
+import com.locker.service.WeChatService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -21,20 +22,26 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthorizationController {
 
     @Autowired
-    private weChatService weChatService;
+    private WeChatService weChatService;
     @Autowired
     private RedisService redisService;
+    @Autowired
+    private UserInfoService userInfoService;
 
     @PostMapping
     @RequestMapping(value = "/{code}")
     public TokenBean userAuthor(@PathVariable(value = "code",required = true) String code){
         System.out.println("new Connect come in..:"+code);
         WeTokenBean weTokenBean=weChatService.authUser(code);
-        if(!StringUtils.isEmpty(weTokenBean.getSession_key()))
-        redisService.setTokenToRedisTemporaryHours(weTokenBean,(long)2);
-
         TokenBean tokenBean=new TokenBean();
-        tokenBean.setAccess_token(weTokenBean.getSession_key());
+        if(!StringUtils.isEmpty(weTokenBean.getSession_key())) {
+            redisService.setTokenToRedisTemporaryHours(weTokenBean, (long) 2);
+            userInfoService.updateOrInsertUser(weTokenBean);
+            tokenBean.setAccess_token(weTokenBean.getSession_key());
+        }else{
+            tokenBean.setError_code(weTokenBean.getErrcode());
+            tokenBean.setError_msg(weTokenBean.getErrmsg());
+        }
         return tokenBean;
     }
 
