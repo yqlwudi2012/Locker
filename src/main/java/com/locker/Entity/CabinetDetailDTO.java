@@ -1,4 +1,4 @@
-package com.locker.Entity;
+package com.locker.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -24,13 +24,13 @@ public class CabinetDetailDTO implements Serializable {
     private int type;
 
     @Column(length =  2)
-    private int Status;
+    private int status;
 
     @Column(length =  3)
     private int horizontal;
 
     @Column(length =  3)
-    private int Vertical;
+    private int vertical;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date usedTime;

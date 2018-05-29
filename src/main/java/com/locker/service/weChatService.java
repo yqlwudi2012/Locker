@@ -16,16 +16,15 @@ public class WeChatService {
     private RestTemplate restTemplate;
 
     @Value("${weChat.appID}")
-    private String AppId;
+    private String appId;
     @Value("${weChat.appSecret}")
     private String secret;
     @Value("${weChat.auth_url}")
-    private String auth_url;
+    private String authUrl;
 
-    private String grant_type="authorization_code";
     public WeTokenBean authUser(String code){
 
-        return restTemplate.getForObject(auth_url,WeTokenBean.class,AppId,secret,code);
+        return restTemplate.getForObject(authUrl,WeTokenBean.class,appId,secret,code);
 
     }
 }
