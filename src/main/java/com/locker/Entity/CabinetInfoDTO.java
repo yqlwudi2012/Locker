@@ -1,4 +1,4 @@
-package com.locker.Entity;
+package com.locker.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

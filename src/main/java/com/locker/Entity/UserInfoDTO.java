@@ -1,4 +1,4 @@
-package com.locker.Entity;
+package com.locker.entity;
 
 import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
@@ -59,7 +59,6 @@ public class UserInfoDTO implements Serializable{
     }
     @PreUpdate
     void preUpdate(){
-        System.out.println("update user....");
         lastLoginTime = new Date();
     }
 

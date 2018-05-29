@@ -31,7 +31,6 @@ public class AuthorizationController {
     @PostMapping
     @RequestMapping(value = "/{code}")
     public TokenBean userAuthor(@PathVariable(value = "code",required = true) String code){
-        System.out.println("new Connect come in..:"+code);
         WeTokenBean weTokenBean=weChatService.authUser(code);
         TokenBean tokenBean=new TokenBean();
         if(!StringUtils.isEmpty(weTokenBean.getSession_key())) {

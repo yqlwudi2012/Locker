@@ -1,6 +1,6 @@
 package com.locker.dao;
 
-import com.locker.Entity.CabinetInfoDTO;
+import com.locker.entity.CabinetInfoDTO;
 
 /**
  * Created by Sejta on 2018/5/29.

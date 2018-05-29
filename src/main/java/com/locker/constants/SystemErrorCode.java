@@ -5,7 +5,10 @@ package com.locker.constants;
  */
 
 public class   SystemErrorCode {
-    public static String TOKEN_INVALID="10000";
+    private SystemErrorCode(){
+        throw new IllegalStateException(SystemErrorMsg.UTILITY_CLASS);
+    }
+    public static final String TOKEN_INVALID="10000";
 
 
 

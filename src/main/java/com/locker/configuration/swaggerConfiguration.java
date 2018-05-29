@@ -15,7 +15,7 @@ import springfox.documentation.spring.web.plugins.Docket;
  * Created by Sejta on 2018/5/28.
  */
 @Configuration
-public class swaggerConfiguration {
+public class SwaggerConfiguration {
     @Value("${swagger2.enabled}")
     private boolean swaggerEnable;
     @Bean

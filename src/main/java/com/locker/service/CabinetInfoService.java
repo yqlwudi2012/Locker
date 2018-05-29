@@ -1,6 +1,6 @@
 package com.locker.service;
 
-import com.locker.Entity.CabinetInfoDTO;
+import com.locker.entity.CabinetInfoDTO;
 import com.locker.dao.CabinetInfoDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;

@@ -1,6 +1,6 @@
 package com.locker.dao;
 
-import com.locker.Entity.UserInfoDTO;
+import com.locker.entity.UserInfoDTO;
 
 /**
  * Created by Sejta on 2018/5/28.

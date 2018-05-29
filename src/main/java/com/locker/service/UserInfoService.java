@@ -1,6 +1,6 @@
 package com.locker.service;
 
-import com.locker.Entity.UserInfoDTO;
+import com.locker.entity.UserInfoDTO;
 import com.locker.bean.WeTokenBean;
 import com.locker.dao.UserInfoDao;
 import com.locker.util.MapperUtil;

@@ -31,7 +31,7 @@ public class RedisService {
     }
     public String getOpenIdFromRedis(String access_token){
         if(redisTemplate.hasKey(access_token)) {
-            return redisTemplate.opsForValue().get(access_token).toString();
+            return redisTemplate.opsForValue().get(access_token);
         }else{
             return null;
         }
