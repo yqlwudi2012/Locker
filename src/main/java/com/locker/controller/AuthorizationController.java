@@ -4,6 +4,7 @@ import com.locker.bean.TokenBean;
 import com.locker.bean.WeTokenBean;
 import com.locker.service.RedisService;
 import com.locker.service.UserInfoService;
+import com.locker.service.WeChatService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
