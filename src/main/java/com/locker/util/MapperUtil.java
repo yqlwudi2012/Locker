@@ -1,8 +1,9 @@
 package com.locker.util;
 
-import com.locker.entity.UserInfoDTO;
+
 import com.locker.bean.WeTokenBean;
 import com.locker.constants.SystemErrorMsg;
+import com.locker.entity.UserInfoDTO;
 
 /**
  * Created by Sejta on 2018/5/29.
