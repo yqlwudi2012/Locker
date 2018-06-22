@@ -17,15 +17,18 @@ import springfox.documentation.spring.web.plugins.Docket;
 @Configuration
 public class SwaggerConfiguration {
     @Value("${swagger2.enabled}")
-    private boolean swaggerEnable;
+    private boolean swaggerEnable2;
+    //for update
+
+
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .enable(swaggerEnable)
+                .enable(swaggerEnable2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage(SystemConstants.BASE_CONTROLLER_PACKAGE))
                 .paths(PathSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage(SystemConstants.BASE_CONTROLLER_PACKAGE))
                 .build();
     }
 
